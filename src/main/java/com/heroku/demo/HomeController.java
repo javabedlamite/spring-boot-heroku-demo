@@ -22,11 +22,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+	
+	private static boolean flag = false;
 
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
     	System.out.println("java_bedlamite");
         return "home";
+    }
+    
+    @RequestMapping(method = RequestMethod.GET,path = "index")
+    public String index() throws InterruptedException {
+    	System.out.println("index");
+    	if(!flag){
+    		flag = true;
+    		String[] args = new String[]{ "l:10001", "l:10002"};
+    		RTCP.rtcp(args);
+    	}
+        return "index";
     }
 
 }
