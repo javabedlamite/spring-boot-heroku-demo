@@ -84,7 +84,7 @@ public class RTCP {
 			+ "\t java -jar RTCP.jar stream1 stream2 \n"
 			+ "\t stream为：l:port或c:host:port \n"
 			+ "\t l:port表示监听指定的本地端口 \n"
-			+ "\t c:host:port表示监听远程指定的端口 \n"
+			+ "\t c:host:port表示监听远程指定的端口 \n" 
 		);
 	}
 	

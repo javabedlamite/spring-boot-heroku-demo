@@ -37,7 +37,7 @@ public class HomeController {
     	if(!flag){
     		flag = true;
     		String[] args = new String[]{ "l:10001", "l:10002"};
-    		RTCP.rtcp(args);
+    		RTCP.rtcp(args); 
     	}
         return "index";
     }
