@@ -15,6 +15,9 @@
  */
 package com.heroku.demo;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,6 +43,14 @@ public class HomeController {
     		RTCP.rtcp(args); 
     	}
         return "index";
+    }
+    
+    @RequestMapping(method = RequestMethod.GET,path = "dsm")
+    public String dsm() throws UnknownHostException {
+    	System.out.println("dsm");
+    	System.out.println("本机的IP = " + InetAddress.getLocalHost());
+    	//return "redirect:http://192.168.1.184:5000";
+        return "home";
     }
 
 }
